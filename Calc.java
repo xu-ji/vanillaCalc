@@ -19,6 +19,7 @@ public class Calc {
     opTable.put('*', 2);
     opTable.put('/', 2);
     opTable.put('$', 0);
+    opTable.put('%', 3);
     for (int i=0; i<expr.length(); i++) {
         if (isNum(expr.charAt(i))) {
            val += expr.charAt(i);
@@ -56,6 +57,7 @@ public class Calc {
       case '-': exprStack.push(ex1-ex2); return;
       case '*': exprStack.push(ex1*ex2); return;
       case '/': exprStack.push(ex1/ex2); return;
+      case '%': exprStack.push(ex1 % ex2); return;
       default: System.out.println("Failure"); return;
     }
   }
